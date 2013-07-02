@@ -1,0 +1,8 @@
+@(page: com.beligum.cms.utils.PageRenderer)
+
+@header = {
+}
+
+@com.beligum.blingblocks.views.html.cms.template(page, "layouter", header) {
+	@page.renderBlock("general-info")
+}

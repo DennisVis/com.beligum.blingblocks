@@ -1,0 +1,11 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Assets
+GET     /assets/core/*file							com.beligum.core.Assets.at(path="/public/com/beligum/core", file)
+GET     /assets/cms/*file							com.beligum.cms.Assets.at(path="/public/com/beligum/cms", file)
+GET     /assets/blingblocks/*file					com.beligum.blingblocks.Assets.at(path="/public/com/beligum/blingblocks", file)
+
+# CMS
+->		/											com.beligum.cms.Routes

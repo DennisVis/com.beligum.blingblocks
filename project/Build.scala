@@ -8,14 +8,17 @@ object ApplicationBuild extends Build {
   val appVersion      = "1.0-SNAPSHOT"
 
   val appDependencies = Seq(
-    // Add your project dependencies here,
-    javaCore,
-    javaJdbc,
-    javaEbean
+    "com.beligum" %% "com_beligum_cms" % "1.0-SNAPSHOT"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
-    // Add your own project settings here      
+  	organization := "com.beligum",
+    publishArtifact in(Compile, packageDoc) := false,
+    sources in doc in Compile := List(),
+    com.typesafe.sbteclipse.core.EclipsePlugin.EclipseKeys.skipParents in ThisBuild := false,
+    com.typesafe.sbteclipse.core.EclipsePlugin.EclipseKeys.withSource := true,
+    
+    templatesImport ++= Seq("java.util._","com.beligum._","com.beligum.blingblocks._")
   )
 
 }
