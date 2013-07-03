@@ -8,4 +8,4 @@ GET     /assets/cms/*file							com.beligum.cms.Assets.at(path="/public/com/beli
 GET     /assets/blingblocks/*file					com.beligum.blingblocks.Assets.at(path="/public/com/beligum/blingblocks", file)
 
 # CMS
-->		/											com.beligum.cms.Routes
+->		/											com.beligum.cms.all.Routes
