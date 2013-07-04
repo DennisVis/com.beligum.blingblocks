@@ -21,7 +21,7 @@ object ApplicationBuild extends Build {
     com.typesafe.sbteclipse.core.EclipsePlugin.EclipseKeys.skipParents in ThisBuild := false,
     com.typesafe.sbteclipse.core.EclipsePlugin.EclipseKeys.withSource := true,
     
-    templatesImport ++= Seq("java.util._","com.beligum._","com.beligum.blingblocks._")
+    templatesImport ++= Seq("com.beligum._")
   )
 
 }
