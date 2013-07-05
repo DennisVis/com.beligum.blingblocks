@@ -6,15 +6,15 @@
 create table cms_block (
   type                      varchar(31) not null,
   id                        bigint auto_increment not null,
-  created_at                timestamp,
-  updated_at                timestamp,
+  created_at                datetime,
+  updated_at                datetime,
   created_by                bigint,
   updated_by                bigint,
   url_name                  varchar(255),
   parent_path               varchar(255),
   template_id               bigint,
   html                      TEXT,
-  visible                   boolean,
+  visible                   tinyint(1) default 0,
   master_page               bigint,
   language                  varchar(255),
   title                     varchar(255),
@@ -22,9 +22,9 @@ create table cms_block (
 ;
 
 create table template (
-  id                        bigint not null,
-  created_at                timestamp,
-  updated_at                timestamp,
+  id                        bigint auto_increment not null,
+  created_at                datetime,
+  updated_at                datetime,
   created_by                bigint,
   updated_by                bigint,
   name                      varchar(255),
@@ -34,8 +34,8 @@ create table template (
 
 create table users (
   id                        bigint auto_increment not null,
-  created_at                timestamp,
-  updated_at                timestamp,
+  created_at                datetime,
+  updated_at                datetime,
   created_by                bigint,
   updated_by                bigint,
   login                     varchar(255),
@@ -46,8 +46,6 @@ create table users (
   role_level                integer,
   constraint pk_users primary key (id))
 ;
-
-create sequence template_seq;
 
 alter table cms_block add constraint fk_cms_block_createdBy_1 foreign key (created_by) references users (id) on delete restrict on update restrict;
 create index ix_cms_block_createdBy_1 on cms_block (created_by);
@@ -68,15 +66,13 @@ create index ix_users_updatedBy_7 on users (updated_by);
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists cms_block;
+drop table cms_block;
 
-drop table if exists template;
+drop table template;
 
-drop table if exists users;
+drop table users;
 
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists template_seq;
+SET FOREIGN_KEY_CHECKS=1;
 
