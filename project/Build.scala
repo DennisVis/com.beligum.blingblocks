@@ -5,7 +5,7 @@ import play.Project._
 object ApplicationBuild extends Build {
 
   val appName         = "com_beligum_blingblocks"
-  val appVersion      = "1.0-SNAPSHOT"
+  val appVersion      = "0.1.0"
 
   val appDependencies = Seq(
   	javaCore,
