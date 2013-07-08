@@ -26,8 +26,8 @@
 
 	@cms.views.html.admin_panel(page)
 	<div class="content">
-		<div id="header">
-			<div id="headercontainer">
+		<div id="header" class="row">
+			<div id="headercontainer" class="span6 offset4">
 				<div id="logo">
 					<center>
 						<img src="@blingblocks.routes.Assets.at("images/logo.png")" alt="bling blocks logo" width="200px">
@@ -38,23 +38,33 @@
 					<p class="pitch">A front-end CMS so easy, even rapper Steve could use it.</p>
 				</div>
 
-				<div id="test">
+				<div id="dl-buttons">
 					<a class="button" href="#"> Download </a> <a class="button" href="#"> See on Github </a>
 				</div>
 			</div>
 		</div>
-
-
+		
 		@content
-
-
-		<div id="footer">
-			<div id="footercontainer">
+		
+		<div id="footer" class="row">
+			<div id="footercontainer" class="span8 offset3">
 				<p class="pitch">
 					Developed by the folks of <a href="http://www.beligum.com" target="_blank">Beligum</a>! Say hi on <a href="https://www.facebook.com/pages/beligum-bvba/128380363939162?fref=ts" target="_blank">Facebook</a> or <a href="https://twitter.com/beligum" target="_blank">Twitter</a>.
 				</p>
 			</div>
 		</div>
+		
+		@if(play.api.Play.isProd(play.api.Play.current)) {
+			<script>
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+				ga('create', 'UA-10275393-21', 'blingblocks.org');
+				ga('send', 'pageview');
+			</script>
+		}
 	</div>
 </body>
 </html>
