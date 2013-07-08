@@ -26,8 +26,8 @@
 
 	@cms.views.html.admin_panel(page)
 	<div class="content">
-		<div id="header">
-			<div id="headercontainer">
+		<div id="header" class="row-fluid">
+			<div id="headercontainer" class="span6 offset3">
 				<div id="logo">
 					<center>
 						<img src="@blingblocks.routes.Assets.at("images/logo.png")" alt="bling blocks logo" width="200px">
@@ -39,7 +39,14 @@
 				</div>
 
 				<div id="test">
-					<a class="button" href="#"> Download </a> <a class="button" href="#"> See on Github </a>
+					<div class="row-fluid">
+						<div class="span6">
+							<a class="button" href="#"> Download </a>
+						</div>
+						<div class="span6">
+							<a class="button" href="#"> See on Github </a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -48,8 +55,8 @@
 		@content
 
 
-		<div id="footer">
-			<div id="footercontainer">
+		<div id="footer" class="row-fluid">
+			<div id="footercontainer" class="span6 offset3">
 				<p class="pitch">
 					Developed by the folks of <a href="http://www.beligum.com" target="_blank">Beligum</a>! Say hi on <a href="https://www.facebook.com/pages/beligum-bvba/128380363939162?fref=ts" target="_blank">Facebook</a> or <a href="https://twitter.com/beligum" target="_blank">Twitter</a>.
 				</p>
