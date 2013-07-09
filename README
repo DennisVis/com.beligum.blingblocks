@@ -1,1 +1,38 @@
-TODO
+#
+# Note that this is a very early release, so don't me mad if some stuff don't work from the first time.
+# Instead, just post your question on our mailing list and we'll respond as fast as possible:
+# 
+# User mailinglist: https://groups.google.com/a/blingblocks.org/forum/#!forum/user
+#
+
+We've built Bling Blocks on the excellent Play! Framework (http://www.playframework.com),
+but made some configuration decisions to make our Play-projects more manageble (independent sub-projects).
+Because of this, it's not always clear from the start how to set-up and run Bling Blocks from source.
+
+Here's a quick HOWTO, based on this release: http://dl.beligum.com/releases/blingblocks/blingblocks-cms_0.1.0.zip
+So instead of checking out the source code, you may want to start out with the code in that zip.
+You can always also checkout the project-sources from GitHub, but make sure you keep the same structure.
+For more info, please contact us.
+
+(these instructions have been tested on Ubuntu Linux and Mac OSX)
+
+0) I'll assume that the 'play-2.1.1' command points to a play-2.1.1 binary, adapt the path if necessary (see http://www.playframework.com for details)
+1) To start, make sure you're in the same folder as this file, then execute the following commands from your terminal:
+2) cd com.beligum.core.play
+3) play-2.1.1 compile
+4) cd ../com.beligum.cms
+5) play-2.1.1 compile
+6) cd ../com.beligum.blingblocks
+7) play-2.1.1 compile
+
+If all went well, try to boot the server on localhost:
+
+8) play-2.1.1 run
+
+Now open your browser and surf to http://localhost:9000, you should see the Bling Blocks website.
+To play around, login at http://localhost:9000/login with demo:demo (that is, username=demo, password=demo).
+
+Good luck and drop us a line if you're in trouble or want to help out!
+
+
+
